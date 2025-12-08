@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Novo Álbum</h2>
+
+<form method="POST">
+
+    <label>Título</label>
+    <input name="titulo" class="form-control" required>
+
+    <label>Ano de Lançamento</label>
+    <input name="ano" type="number" class="form-control" required>
+
+    <label>Artista</label>
+    <select name="id_artista" class="form-control" required>
+        {% for art in artistas %}
+        <option value="{{ art.id_artista }}">{{ art.nome_artistico }}</option>
+        {% endfor %}
+    </select>
+
+    <button class="btn btn-success mt-3">Salvar</button>
+</form>
+
+{% endblock %}

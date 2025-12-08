@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Nova Playlist</h2>
+
+<form method="POST">
+
+    <label>Nome</label>
+    <input class="form-control" name="nome" required>
+
+    <label>Descrição</label>
+    <textarea class="form-control" name="descricao"></textarea>
+
+    <label>Pública?</label>
+    <input type="checkbox" name="publica">
+
+    <label>Usuário</label>
+    <select name="id_usuario" class="form-control">
+        {% for u in usuarios %}
+        <option value="{{ u.id_usuario }}">{{ u.nome }}</option>
+        {% endfor %}
+    </select>
+
+    <button class="btn btn-success mt-3">Salvar</button>
+
+</form>
+
+{% endblock %}

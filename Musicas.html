@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Músicas</h2>
+<a href="/musicas/novo" class="btn btn-primary mb-3">Nova Música</a>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th><th>Título</th><th>Gênero</th><th>Álbum</th>
+    </tr>
+
+    {% for m in musicas %}
+    <tr>
+        <td>{{ m.id_musica }}</td>
+        <td>{{ m.titulo }}</td>
+        <td>{{ m.genero }}</td>
+        <td>{{ m.album_nome }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

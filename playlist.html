@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Playlists</h2>
+<a href="/playlists/novo" class="btn btn-primary mb-3">Nova Playlist</a>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th><th>Nome</th><th>Usuário</th><th>Pública</th><th>Ações</th>
+    </tr>
+
+    {% for p in playlists %}
+    <tr>
+        <td>{{ p.id_playlist }}</td>
+        <td>{{ p.nome }}</td>
+        <td>{{ p.usuario_nome }}</td>
+        <td>{{ 'Sim' if p.publica else 'Não' }}</td>
+        <td>
+            <a href="/playlist/{{ p.id_playlist }}/musicas" class="btn btn-secondary btn-sm">
+                Músicas
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

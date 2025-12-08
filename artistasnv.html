@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Novo Artista</h2>
+
+<form method="POST">
+    <label>Nome Artístico</label>
+    <input class="form-control" name="nome_artistico" required>
+
+    <label>Nome Real</label>
+    <input class="form-control" name="nome_real">
+
+    <label>Biografia</label>
+    <textarea class="form-control" name="biografia"></textarea>
+
+    <label>País</label>
+    <input class="form-control" name="pais">
+
+    <button class="btn btn-success mt-3">Salvar</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Novo Usuário</h2>
+
+<form method="POST">
+
+    <label>Nome</label>
+    <input name="nome" class="form-control" required>
+
+    <label>Email</label>
+    <input name="email" class="form-control" required>
+
+    <label>Senha</label>
+    <input name="senha" type="password" class="form-control" required>
+
+    <label>Data de Nascimento</label>
+    <input type="date" name="data_nascimento" class="form-control" required>
+
+    <label>Tipo de Assinatura</label>
+    <select name="tipo" class="form-control">
+        <option value="Free">Free</option>
+        <option value="Premium">Premium</option>
+        <option value="Familia">Família</option>
+    </select>
+
+    <button class="btn btn-success mt-3">Salvar</button>
+
+</form>
+
+{% endblock %}

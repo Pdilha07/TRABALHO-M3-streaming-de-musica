@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Artistas</h2>
+<a href="/artistas/novo" class="btn btn-primary mb-3">Novo Artista</a>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th><th>Artístico</th><th>País</th>
+    </tr>
+
+    {% for a in artistas %}
+    <tr>
+        <td>{{ a.id_artista }}</td>
+        <td>{{ a.nome_artistico }}</td>
+        <td>{{ a.pais }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
